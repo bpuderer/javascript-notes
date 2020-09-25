@@ -19,4 +19,4 @@ console.log(nums.map(doubler));
 
 
 findThis = 9;
-console.log("does nums contain " + findThis + ": " + nums.includes(8));
+console.log("does nums contain " + findThis + ": " + nums.includes(findThis));

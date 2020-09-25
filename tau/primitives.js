@@ -12,3 +12,5 @@ let age;
 console.log(age); // undefined. default val
 age = null;
 console.log(age);
+
+console.log("9 modulus 7: " + 9 % 7);

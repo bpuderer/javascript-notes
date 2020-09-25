@@ -1,0 +1,40 @@
+Notes from Automating in the Browser Using JavaScript TAU course
+
+F12 > Console
+document.querySelector(<css locator string>)
+document.querySelectorAll(<css locator string>)
+document.getElementBy*
+document.getElementsBy*
+
+Application tab, Local Storage
+
+
+Elements, Event Listeners
+element which
+location.hash = "part2";
+
+
+document.querySelector(<css locator for input>).value = "value";
+document.querySelector(<css locator for input>).dispatchEvent(new Event('change', {'bubbles': true}));
+document.querySelector(<css locator for input>).dispatchEvent(new Event('dblclick', {'bubbles': true}));
+document.querySelector(<css locator for input>).dispatchEvent(new Event('blur'));
+
+
+F12 > Sources > Snippets (mini IDE).
+Code complete better in regular Console
+Run snippet so it's available (as with import)
+
+
+localStorate.clear()
+
+
+Bookmarklet. Code entered in bookmark URL
+javascript:(function(){alert("hello");})()
+
+javascript: (function() {
+// code
+})()
+
+
+JavaScriptExecutor in WebDriver
+https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/JavascriptExecutor.html

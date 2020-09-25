@@ -25,3 +25,28 @@ class Car {
 const myCar = new Car("Honda", 2012);
 console.log(myCar.make);
 myCar.startCar();
+
+
+
+
+var something = new function() {
+
+    function privateLog(str) {
+        console.log(str);
+    }
+
+    this.logThis = function(str) {
+        privateLog(str);
+    }
+}
+something.logThis("log msg");
+
+
+
+
+var something2 = {
+    logThis: function (str) {
+        console.log(str);
+    }
+}
+something2.logThis("log msg2");
