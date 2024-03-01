@@ -33,9 +33,11 @@ console.log(myArray);
 
 
 // slice to return shallow copy of portion of an array
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
 myArray = ["a", "b", "c", "d", "e", "f"];
 console.log(myArray.slice(2));  // same as myArray[2:] in python
 console.log(myArray.slice(1, 4)); // same as myArray[1:4] in python
+console.log(myArray.slice(-2)); // same as myArray[-2] in python
 
 
 // make shallow copy of array with spread
@@ -50,6 +52,10 @@ console.log(myArray);
 
 // indexOf returns index of first occurrence  element in array, -1 if not found
 console.log(["a", "b", "c", "b"].indexOf("b"));
+
+
+// use includes to find a value in an array.  DO NOT use 'in'
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in
 
 
 
