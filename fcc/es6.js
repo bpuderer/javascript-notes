@@ -1,5 +1,22 @@
 // let const
 
+// for...of loop
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+for (const word of ["and", "the", "of"]) {
+    console.log(word);
+}
+for (letter of "abc123") {
+    console.log(letter);
+}
+
+// for...in loop
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+const object = { a: 1, b: 2, c: 3 };
+for (const property in { a: 1, b: 2, c: 3 }) {
+  console.log(`${property}: ${object[property]}`);
+}
+
+
 
 const MATH_CONSTANTS = {
     PI: 3.14

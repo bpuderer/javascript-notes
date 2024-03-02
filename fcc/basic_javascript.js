@@ -42,6 +42,8 @@ console.log("aStr last letter: " + aStr[aStr.length - 1]);
 
 // array.  mutable even if declared with const
 const anArray = ["a", 1];
+// use includes method for membership, NOT in
+console.log(anArray.includes(1));
 anArray[0] = "b";  // bracket notation
 console.log(anArray);
 const myArray = [["Braves", 3], ["Astros", 9]];
