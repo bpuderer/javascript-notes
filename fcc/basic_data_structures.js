@@ -58,6 +58,9 @@ console.log(["a", "b", "c", "b"].indexOf("b"));
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in
 
 
+// combine without mutation
+console.log([1, 2, 3].concat([4, 5, 6]));
+
 
 
 // object stuff
@@ -78,7 +81,7 @@ userActivity["the date"] = "January 2, 2024"
 
 // or to use a variable to name the property
 const keyname = "data";
-console.log(userActivity.keyname);  // WRONG  outputs undefined
+console.log(`WRONG: ${userActivity.keyname}`);  // WRONG  outputs undefined
 console.log(userActivity[keyname]); // CORRECT
 
 userActivity.data.online = 41;
