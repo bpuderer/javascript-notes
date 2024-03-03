@@ -152,3 +152,36 @@ function fearNotLetter(str) {
 console.log(fearNotLetter("abcdefghjklmno"));
 console.log(fearNotLetter("mno"));
 
+
+
+// return array of unique vals from n arrays passed in
+function uniteUnique(...arrs) {
+    const uniqueVals = [];
+    for (const arr of arrs) {
+        for (let element of arr) {
+            if (!uniqueVals.includes(element)) {
+                uniqueVals.push(element);
+            }
+        }
+    }
+    return uniqueVals;
+}
+console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+
+
+
+// convert HTML entities
+function convertHTML2(str) {
+    const myRegex = /[&<>\'"]/g;
+    const entities = {
+        "&": "&amp;",
+        '"': "&quot;",
+        "'": "&apos;",
+        ">": "&gt;",
+        "<": "&lt;"
+    }
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+    return str.replace(myRegex, match => entities[match]);
+}
+console.log(convertHTML2("Dolce & & Gabbana"));
+
