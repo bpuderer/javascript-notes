@@ -57,7 +57,7 @@ console.log("Hey heyyy! heyyyyy! heyyyy!".match(/hey{3,4}!/g)); // 3 or 4
 console.log("Hey heyyy! heyyyyy! heyyyy!".match(/hey{4,}!/g));  // 4 or more
 
 
-// ? possible existence. 0 or 1 of preceding element
+// ? possible existence. 0 or 1 of preceding element   (!!!!!)
 console.log("favourite".match(/favou?rite/g));
 console.log("favorite".match(/favou?rite/g));
 
