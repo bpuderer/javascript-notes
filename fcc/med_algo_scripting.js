@@ -316,3 +316,86 @@ function dropElements(arr, func) {
 console.log(dropElements([1, 2, 3], function (n) { return n < 3; }));
 console.log(dropElements([4, 5, 1], function (n) { return n < 3; }));
 console.log(dropElements([0, 1, 0, 1], function (n) { return n === 1; }));
+
+
+
+
+// flatten array without Array flat method
+function steamrollArray(arr) {
+    // dont mutate arr
+    let arrCopy = [...arr];
+    let solution = [];
+
+    while (arrCopy.length > 0) {
+        let element = arrCopy.shift();
+        if (Array.isArray(element)) {
+            // if array, put back the elements
+            arrCopy.unshift(...element);
+        } else {
+            // not array, add to solution
+            solution.push(element);
+        }
+    }
+    return solution;
+}
+console.log(steamrollArray([1, [2], [3, [[4]]]]));
+
+
+
+function binaryAgent(str) {
+    return str.split(" ").map(item => String.fromCharCode(parseInt(item, 2))).join('');
+}
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+
+
+
+
+function truthCheck(collection, pre) {
+    return collection.every(item => item[pre]);
+}
+truthCheck([{ name: "Quincy", role: "Founder", isBot: false }, { name: "Naomi", role: "", isBot: false }, { name: "Camperbot", role: "Bot", isBot: true }], "isBot");
+
+
+
+
+const Person = function (first, last) {
+    let firstName = first;
+    let lastName = last;
+
+    this.getFirstName = function () {
+        return firstName;
+    }
+    this.getLastName = function () {
+        return lastName;
+    }
+    this.getFullName = function () {
+        return firstName + " " + lastName;
+    };
+    this.setFirstName = function (first) {
+        firstName = first;
+    }
+    this.setLastName = function (last) {
+        lastName = last;
+    }
+    this.setFullName = function (first, last) {
+        firstName = first;
+        lastName = last;
+    }
+};
+
+
+
+
+function orbitalPeriod(arr) {
+    let resultArr = [];
+    const GM = 398600.4418; // of Earth
+    const earthRadius = 6367.4447;
+
+    for (let thing of arr) {
+        const result = { name: thing['name'] };
+        result["orbitalPeriod"] = Math.round(2 * Math.PI * Math.sqrt(Math.pow(thing["avgAlt"] + earthRadius, 3) / GM));
+        resultArr.push(result);
+    }
+    return resultArr;
+}
+console.log(orbitalPeriod([{ name: "sputnik", avgAlt: 35873.5553 }]));
