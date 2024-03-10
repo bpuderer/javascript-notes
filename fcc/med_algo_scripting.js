@@ -188,16 +188,6 @@ console.log(convertHTML2("Dolce & & Gabbana"));
 
 
 
-// truth check. all objects in collection have pre key set to a true value
-function truthCheck(collection, pre) {
-    // https://developer.mozilla.org/en-US/docs/Glossary/Falsy
-    return collection.every(item => ![null, undefined, false, NaN, 0, -0, 0n, ""].includes(item[pre]));
-}
-console.log(truthCheck([{ name: "Quincy", role: "Founder", isBot: false }, { name: "Naomi", role: "", isBot: false }, { name: "Camperbot", role: "Bot", isBot: true }], "isBot"));
-
-
-
-
 // add two numbers together. undefined if either is not a number
 // my get two args, may get 1 then need to return a function for the other -> see currying
 function addTogether(...args) {
