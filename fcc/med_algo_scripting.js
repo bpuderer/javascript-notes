@@ -185,3 +185,134 @@ function convertHTML2(str) {
 }
 console.log(convertHTML2("Dolce & & Gabbana"));
 
+
+
+
+// truth check. all objects in collection have pre key set to a true value
+function truthCheck(collection, pre) {
+    // https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+    return collection.every(item => ![null, undefined, false, NaN, 0, -0, 0n, ""].includes(item[pre]));
+}
+console.log(truthCheck([{ name: "Quincy", role: "Founder", isBot: false }, { name: "Naomi", role: "", isBot: false }, { name: "Camperbot", role: "Bot", isBot: true }], "isBot"));
+
+
+
+
+// add two numbers together. undefined if either is not a number
+// my get two args, may get 1 then need to return a function for the other -> see currying
+function addTogether(...args) {
+    if (args.some(item => typeof item !== 'number')) {
+        return undefined;
+    }
+
+    if (args.length == 2) {
+        return args[0] + args[1];
+    } else {
+        return function (y) {
+            if (typeof y !== 'number') {
+                return undefined;
+            } else {
+                return args[0] + y;
+            }
+        }
+
+    }
+}
+console.log(addTogether(2,"3"));
+console.log(addTogether(2,3));
+console.log(addTogether(2)(3));
+
+
+
+// sum odd Fibonacci sequence numbers <= num
+function sumFibs(num) {
+
+    function fib(n){
+      if (n == 0 || n == 1) {
+        return 1;
+      } else {
+          return fib(n - 1) + fib(n - 2)
+      }
+    }
+
+    let tmpFib = 0;
+    let sum = 0;
+    while (fib(tmpFib) <= num) {
+      let tmp = fib(tmpFib);
+      if (tmp % 2 != 0) {
+        sum += tmp;
+      }
+      tmpFib++;
+    }
+
+    return sum;
+  }
+  console.log(sumFibs(4));
+
+
+
+  function sumPrimes(num) {
+    function isPrime(n) {
+        if (n > 1) {
+            for (let i = 2; i < Math.floor(n / 2) + 1; i++) {
+                if (n % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    let sum = 0;
+    for (let i = 0; i <= num; i++) {
+        if (isPrime(i)) {
+            sum += i;
+        }
+    }
+    return sum;
+}
+console.log(sumPrimes(977));
+
+
+
+
+function smallestCommons(arr) {
+    // dont want to mutate arr
+    let arrSorted = arr.toSorted((a, b) => a - b);  // gotcha
+
+    let numRange = [];
+    for (let i = arrSorted[0]; i < arrSorted[1] + 1; i++) {
+        numRange.push(i);
+    }
+
+    let solution = arrSorted[1];
+    while (true) {
+        if (numRange.every(item => solution % item == 0)) {
+            return solution;
+        }
+        solution++;
+    }
+}
+console.log(smallestCommons([2, 10]));
+
+
+
+function dropElements(arr, func) {
+    let howManyToRemove = 0;
+    for (let thing of arr) {
+        if (func(thing)) {
+            break;
+        }
+        howManyToRemove++;
+    }
+
+    if (howManyToRemove > 0) {
+        arr.splice(0, howManyToRemove);
+    }
+    return arr;
+}
+console.log(dropElements([1, 2, 3], function (n) { return n < 3; }));
+console.log(dropElements([4, 5, 1], function (n) { return n < 3; }));
+console.log(dropElements([0, 1, 0, 1], function (n) { return n === 1; }));
