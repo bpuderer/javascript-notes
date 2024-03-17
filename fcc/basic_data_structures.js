@@ -37,7 +37,7 @@ console.log(myArray);
 myArray = ["a", "b", "c", "d", "e", "f"];
 console.log(myArray.slice(2));  // same as myArray[2:] in python
 console.log(myArray.slice(1, 4)); // same as myArray[1:4] in python
-console.log(myArray.slice(-2)); // same as myArray[-2] in python
+console.log(myArray.slice(-2)); // same as myArray[-2:] in python
 
 
 // make shallow copy of array with spread
