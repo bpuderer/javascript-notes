@@ -30,7 +30,7 @@ console.log(12 / 5);
 console.log(Math.floor(12 / 5));
 
 
-// rouding
+// rounding
 let changeDue = 0.1 + 0.2;
 console.log(changeDue);
 changeDue = Number(changeDue.toFixed(2));

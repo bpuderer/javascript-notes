@@ -77,3 +77,6 @@ console.log(elements.join(''));
 for (arrayIteratorEntry of myArray.entries()) {
     console.log('index: ', arrayIteratorEntry[0], ' element: ', arrayIteratorEntry[1]);
 }
+
+
+myArray.forEach((element) => console.log(element));
